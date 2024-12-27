@@ -19,9 +19,9 @@ export default function Pagina2Screen() {
 
   return (
     <ImageBackground
-      source={{ uri: 'https://4kwallpapers.com/images/walls/thumbs_3t/12805.jpg' }} // Cambia por la ruta de tu imagen
+      source={{ uri: 'https://4kwallpapers.com/images/walls/thumbs_3t/12805.jpg' }} 
       style={styles.background}
-      resizeMode="cover" // Ajusta cómo se muestra la imagen
+      resizeMode="cover" 
     >
       <View style={styles.container}>
         <Text style={styles.title}>USUARIOS</Text>

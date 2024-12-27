@@ -14,7 +14,7 @@ export default function WelcomeScreen({ navigation }: any) {
         <Text style={styles.info}>Nombre: {'Heydi Herrera'}</Text>
         <Text style={styles.info}>Carrera: {'Desarrollo de software'}</Text>
         <View style={styles.buttonContainer}>
-          <Button 
+          <Button color={'purple'}
             title="IR A BOTTOM"
             onPress={() => navigation.navigate("Drawer")}
           />
@@ -48,5 +48,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 20,
     width: '60%',
+    
   },
 });

@@ -8,13 +8,14 @@ import Pagina3Screen from "../screens/Pagina3Screen";
 import Pagina4Screen from "../screens/Pagina4Screen";
 import Pagina5Screen from "../screens/Pagina5Screen";
 import Pagina6Screen from '../screens/Pagina6Screen';
+import Pagina7Screen from "../screens/Pagina7Screen";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 function MyStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={()=>({headerShown:false})}>
             <Stack.Screen name="Welcome" component={WelcomeScreen} />
             <Stack.Screen name="Drawer" component={MyDrawer} />
         </Stack.Navigator>
@@ -30,6 +31,7 @@ function MyDrawer() {
             <Drawer.Screen name="Pagina4" component={Pagina4Screen} />
             <Drawer.Screen name="Pagina5" component={Pagina5Screen} />
             <Drawer.Screen name="Pagina6" component={Pagina6Screen} />
+            <Drawer.Screen name="Pagina7" component={Pagina7Screen} />
         </Drawer.Navigator>
     );
 }

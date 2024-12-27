@@ -1,14 +1,25 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Button, Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
 
-export default function Tarjeta3({ item }:any) { 
+export default function Tarjeta3(props: any) {
+  const [visible, setvisible] = useState(false)
   return (
-    <View style={styles.card}>
-      <Text>{item.name.first}</Text>
-      <View style={styles.imageContainer}>
-        <Image source={{ uri: item.images.main }} style={styles.image} />
-      </View>
-    </View>
+    <TouchableOpacity onPress={() => setvisible(true)} style={styles.card}>
+      <Text>{props.datos.name.first}</Text>
+      <Modal
+        visible={visible}
+        transparent={true}
+      >
+        <View style={styles.modal}>
+          <Image
+            source={{ uri: props.datos.images.main }}
+            style={styles.imag}
+          />
+          <Text style={styles.txtTitulo}>{props.datos.name.first} {props.datos.name.last}</Text>
+          <Button color='purple'title='REGRESAR' onPress={() => setvisible(false)} />
+        </View>
+      </Modal>
+    </TouchableOpacity>
   );
 }
 
@@ -22,10 +33,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 10,
   },
-  image: {
-    height: 120, 
-    width: 120, 
-    resizeMode: "contain", 
-    borderRadius: 50 
+  imag: {
+    height: 250,
+    width: 400,
+    resizeMode: 'contain',
+  } , 
+  modal: {
+    backgroundColor: 'pink',  
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',  
   },
+  
+  txtTitulo: {
+    fontSize: 50
+  }
 });
